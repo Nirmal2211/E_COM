@@ -10,6 +10,6 @@ var productschema = new mongoose.Schema({
     category:{type:String},
     description:{type:String},
     thumbnail:{type:String},
-    images:{type:String}
+    images:{type:Array}
 })
 module.exports = mongoose.model('product-data',productschema);
