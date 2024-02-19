@@ -13,13 +13,13 @@ router.get('/login_user',user.Login_User);
 router.get('/logout_user',user.Logout_user);
 
 // ==========category================
-router.post('/add',category.Add_Category)
-router.get('/view',category.View_Category);
-router.get('/view/:id',category.View_Category);
+router.post('/add_category',category.Add_Category)
+router.get('/view_category',category.View_Category);
+router.get('/view_category/:id',category.View_Category);
 
 // ============product================
-router.post('/add',product.Add_Product);
-router.get('/view',product.View_Product);
-router.get('/view/:id',product.View_Product);
+router.post('/add_porduct',product.Add_Product);
+router.get('/view_product',product.View_Product);
+router.get('/view_product/:id',product.View_Product);
 
 module.exports = router;
