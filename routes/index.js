@@ -18,7 +18,7 @@ router.get('/view_category',category.View_Category);
 router.get('/view_category/:id',category.View_Category);
 
 // ============product================
-router.post('/add_porduct',product.Add_Product);
+router.post('/add_product',product.Add_Product);
 router.get('/view_product',product.View_Product);
 router.get('/view_product/:id',product.View_Product);
 
