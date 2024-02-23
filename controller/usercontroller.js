@@ -14,31 +14,31 @@ exports.View_User = async (req,res) => {
     }else{
         var data = await user.findById(req.params.id)
     }
-    res.status(300).json({data})
+    res.status(200).json({data})
 }
 exports.Update_User = async (req,res) => {
     var data = await user.findByIdAndUpdate(req.params.id,req.body);
-    res.status(400).json({status:"user data updated..."})
+    res.status(200).json({status:"user data updated..."})
 }
 exports.Delete_User = async (req,res) => {
     var data = await user.findByIdAndDelete(req.params.id);
-    res.status(500).json({status:"user data deleted..."})
+    res.status(200).json({status:"user data deleted..."})
 }
 exports.Login_User = async (req,res) => {
     var data = await user.find({"email":req.body.email});
     // var LoginId = await storage.getItem('loginid');
     // if(LoginId==null){
         if(data.length==1){
-            bcrypt.compare(req.body.password,data[0].password, function(err, result){
-                if(result==true){
+            // bcrypt.compare(req.body.password,data[0].password, function(err, result){
+                if(req.body.password==data[0].password){
                     // storage.setItem('loginid',data[0].id)
-                    res.status(600).json({status:"user login successfuly..."})
+                    res.status(200).json({status:"user login successfuly..."})
                 }else{
-                    res.status(600).json({status:"chack your email and password !"})
+                    res.status(200).json({status:"chack your email and password !"})
                 }
-            })
+            // })
         }else{
-            res.status(600).json({status:"chack your email and password !"})
+            res.status(200).json({status:"chack your email and password !"})
         } 
     // }else{
     //     res.status(600).json({status:"user alredy login !"})
@@ -46,5 +46,5 @@ exports.Login_User = async (req,res) => {
 }
 exports.Logout_user = async (req,res) => {
     // storage.clear();
-    res.status(700).json({status:"user logout..."})
+    res.status(200).json({status:"user logout..."})
 }
