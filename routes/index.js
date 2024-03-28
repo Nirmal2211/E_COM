@@ -1,8 +1,21 @@
+//--------urls-----------
+//=== /admin 
+//=== /admin/table
+//=== /admikn/addcategory
+
+
 var express = require('express');
 var router = express.Router();
 var user = require('../controller/usercontroller');
 var category = require('../controller/categorycontroller');
 var product = require('../controller/productcontroller');
+
+var dasboard = require('../controller/dasboardController')
+
+router.get('/',dasboard.Index);
+router.get('/table',dasboard.Simpal_table)
+router.get('/addcategory',dasboard.Add_category)
+
 // ============user==================
 router.post('/add_user',user.Add_User);
 router.get('/view_user',user.View_User);
