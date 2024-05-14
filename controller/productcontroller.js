@@ -22,10 +22,11 @@ exports.Add_Product = async (req,res) => {
 }
 
 exports.View_Product = async (req,res) => {
+    var data;
     if(!req.params.id){
-        var data = await product.find();
+        data = await product.find();
     }else{
-        var data = await product.findById(req.params.id);
+        data = await product.findById(req.params.id);
     }
     res.status(300).json({data})
 }

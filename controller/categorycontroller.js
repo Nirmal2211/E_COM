@@ -13,10 +13,9 @@ exports.Add_Category = async (req,res) =>{
 exports.View_Category = async (req,res) => {
     // if(!req.params.id){
         var data = await category.find();
-        console.log(data);
+        // console.log(data);
     // }else{
     //     var data = await category.findById(req.params.id)
     // }
-    if(data != null)
-        res.status(300).json({data})
+        res.render('categorytable',{data});
 }

@@ -26,11 +26,19 @@
       delete
     </th>
   </tr>
-  <tr>
-    <td>
-
-    </td>
-  </tr>
+  <% data.forEach(data => { %>
+    <tr>
+      <td>
+        <%= data._id %>
+      </td>
+      <td>
+        <%= data.cat_name %>
+      </td>
+      <td>
+        <%= data.cat_image %>
+      </td>
+    </tr>
+  <% }) %>
 </table>
-  
+
 <%- include('footer') %>
