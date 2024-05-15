@@ -28,5 +28,6 @@ exports.View_Product = async (req,res) => {
     }else{
         data = await product.findById(req.params.id);
     }
-    res.status(300).json({data})
+    // res.status(300).json({data})
+    res.render('producttable',{data});
 }

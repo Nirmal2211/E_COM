@@ -4,7 +4,7 @@ var router = express.Router()
 var user = require('../controller/usercontroller');
 
 // ============user==================
-router.post('/add_user',user.Add_User);
+router.post('/',user.Add_User);
 router.get('/view_user',user.View_User);
 router.get('/view_user/:id',user.View_User);
 router.get('/update_user/:id',user.Update_User);

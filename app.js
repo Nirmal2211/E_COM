@@ -33,11 +33,20 @@ app.use('/admin/addcategory',categoryRouter);
 // product router
 app.use('/admin/addproduct',productRouter);
 
+// user router
+app.use('/admin/adduser',userRouter)
+
 // view category
 app.use('/admin/categorytable',categoryRouter);
 
+//View product
+app.use('/admin/producttable',productRouter)
+
 // user router
-app.use('/user',userRouter)
+app.use('/admin/usertable',userRouter)
+
+// delete user
+app.use('/admin/remove',userRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
