@@ -48,6 +48,9 @@ app.use('/admin/usertable',userRouter)
 // delete user
 app.use('/admin/remove',userRouter)
 
+// update user
+app.use('/admin/update',userRouter)
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

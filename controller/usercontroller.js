@@ -20,13 +20,13 @@ exports.View_User = async (req,res) => {
     res.render('usertable',{data})
 }
 exports.Update_User = async (req,res) => {
+    console.log(req.body);
     var data = await user.findByIdAndUpdate(req.params.id,req.body);
-    res.status(200).json({status:"user data updated..."})
+    res.status(200).json({data})
 }
 exports.Delete_User = async (req,res) => {
     var data = await user.findByIdAndDelete(req.params.id);
-    // res.status(200).json({data})
-    await res.redirect('/admin/usertable')
+    res.status(200).json({data})
 }
 exports.Login_User = async (req,res) => {
     var data = await user.find({"email":req.body.email});
